@@ -1,4 +1,4 @@
-package com.qamindslab.moduleone.selenium.example.webdriver;
+package com.qamindslab.moduleone.selenium.example.webdriver.instance;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
