@@ -21,9 +21,17 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+<<<<<<< HEAD
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
+=======
+            <version>4.13.1</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+>>>>>>> main
 
 </project>
