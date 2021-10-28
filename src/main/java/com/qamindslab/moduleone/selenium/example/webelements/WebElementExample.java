@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 
 public class WebElementExample {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
 
         WebDriver driver = new ChromeDriver();
@@ -21,6 +21,7 @@ public class WebElementExample {
 
         System.out.println(companyLogos);
 
+        Thread.sleep(5000);
 
     }
 }
