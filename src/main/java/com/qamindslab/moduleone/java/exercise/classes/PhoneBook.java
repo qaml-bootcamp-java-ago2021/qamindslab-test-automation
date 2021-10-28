@@ -46,6 +46,7 @@ public class PhoneBook {
     public void delete(String number){
         phoneBook.remove(number);
     }
+
     public void updateName(String number, String name){
         phoneBook.replace(number, name);
     }
