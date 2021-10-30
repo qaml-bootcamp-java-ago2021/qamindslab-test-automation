@@ -44,8 +44,26 @@ public class GoogleSearchTest {
     public void googleSearch2() {
         driver.get("https://www.google.com/");
         driver.manage().window().setSize(new Dimension(1661, 933));
-        System.out.println("Titulo:" + driver.getTitle());
-        System.out.println("Source code: " + driver.getPageSource());
+        System.out.println("Current URL is:" + driver.getCurrentUrl());
+
+        driver.navigate().to("https://www.facebook.com/");
+        System.out.println("Current URL is:" + driver.getCurrentUrl());
+
+        driver.navigate().to("https://www.espn.com/");
+        System.out.println("Current URL is:" + driver.getCurrentUrl());
+
+        driver.navigate().back();
+        driver.navigate().back();
+        System.out.println("Current URL is:" + driver.getCurrentUrl());
+
+        driver.navigate().forward();
+        System.out.println("Current URL is:" + driver.getCurrentUrl());
+
+        assert (driver.getCurrentUrl().equals("https://www.facebook.com/")) : "No nos encontramos en facebook: " + driver.getCurrentUrl() ;
+
+        driver.navigate().refresh();
+        driver.close();
+
 
         /*driver.findElement(By.name("q")).click();
         driver.findElement(By.name("q")).sendKeys("metallica");
