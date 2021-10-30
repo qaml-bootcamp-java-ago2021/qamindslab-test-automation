@@ -13,7 +13,7 @@ public class WebDriverManager {
         File rootPath = new File("src/main/resources");
         WebDriver driver;
 
-        switch (browser){
+        switch (browser) {
             case FIREFOX:
                 File firefoxFilePath = new File(rootPath, "geckodriver");
 
@@ -32,4 +32,23 @@ public class WebDriverManager {
 
         return driver;
     }
+
+    public static WebDriver getDriver(String browser) {
+        File rootPath = new File("src/main/resources");
+
+        if (browser.toLowerCase(Locale.ROOT).equals("chrome")) {
+            File chromeFilePath = new File(rootPath, "chromedriver");
+
+            System.setProperty("webdriver.chrome.driver", chromeFilePath.getPath());
+            return new ChromeDriver();
+        } else if (browser.toLowerCase(Locale.ROOT).equals("firefox")) {
+            File firefoxFilePath = new File(rootPath, "geckodriver");
+
+            System.setProperty("webdriver.gecko.driver", firefoxFilePath.getPath());
+            return new FirefoxDriver();
+        } else {
+            return null;
+        }
+    }
+
 }
