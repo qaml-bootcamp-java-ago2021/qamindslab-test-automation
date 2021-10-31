@@ -32,6 +32,10 @@ public class LoadGooglePage {
         driver.get("https://www.google.com/");
         driver.manage().window().setSize(new Dimension(1661, 933));
 
+        System.out.println("Tittle = " + driver.getTitle());
+        System.out.println("Tittle = " + driver.getCurrentUrl());
+        System.out.println("Tittle = " + driver.getPageSource());
+
         Thread.sleep(5000);
         driver.close();
     }
