@@ -9,6 +9,8 @@ public class palindrome{
         System.out.println("Ingrese la palabra a evaluar");
         String palabra = entrada.nextLine();
 
+        palabra =  palabra.replace(" ", "");
+
         int incremento = 0;
         int decremento = palabra.length() - 1;
         boolean validacion = false;
