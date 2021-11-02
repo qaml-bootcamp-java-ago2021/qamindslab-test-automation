@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/qamindslab-test-automation.iml" filepath="$PROJECT_DIR$/.idea/qamindslab-test-automation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qamindslab-test-automation.iml" filepath="$PROJECT_DIR$/qamindslab-test-automation.iml" />
     </modules>
   </component>
 </project>

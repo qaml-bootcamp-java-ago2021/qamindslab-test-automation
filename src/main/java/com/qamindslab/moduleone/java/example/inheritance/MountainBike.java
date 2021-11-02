@@ -8,7 +8,6 @@ public class MountainBike extends Bike{
         this.seatHeight = 0;
     }
 
-
     public void setSeatHeight(int newHeight){
         this.seatHeight = newHeight;
     }
