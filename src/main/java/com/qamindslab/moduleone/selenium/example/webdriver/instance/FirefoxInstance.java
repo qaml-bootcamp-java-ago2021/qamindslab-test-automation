@@ -8,11 +8,12 @@ import java.io.File;
 public class FirefoxInstance {
     public static void main(String[] args) {
         File rootPath = new File("src/main/resources");
-        File firefoxFilePath = new File(rootPath,"geckodriver");
+        File firefoxFilePath = new File(rootPath,"geckodriver.exe");
 
         System.setProperty("webdriver.gecko.driver", firefoxFilePath.getPath());
 
         WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.google.com");
+        driver.get("https://www.youtube.com");
+        driver.quit();
     }
 }

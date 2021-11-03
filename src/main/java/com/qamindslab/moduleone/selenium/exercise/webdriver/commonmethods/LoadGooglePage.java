@@ -13,5 +13,6 @@ public class LoadGooglePage {
             System.out.println(driver.getTitle());
             System.out.println(driver.getCurrentUrl());
             System.out.println(driver.getPageSource());
+            driver.quit();
         }
 }
