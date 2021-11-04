@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>Race Condition Example</title>
+
+<script>
+  var initialised = false;
+  window.addEventListener("load", function() {
+    setTimeout(() => {
+
+    var newElement = document.createElement("p");
+    newElement.textContent = "Hello from JavaScript!";
+    document.body.appendChild(newElement);
+    initialised = true;
+    }, 5000);
+
+  });
+</script>
