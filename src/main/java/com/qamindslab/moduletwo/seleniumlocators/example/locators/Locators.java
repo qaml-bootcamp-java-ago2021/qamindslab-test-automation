@@ -1,4 +1,4 @@
-package com.qamindslab.moduletwo.seleniumlocators.example;
+package com.qamindslab.moduletwo.seleniumlocators.example.locators;
 
 import com.qamindslab.moduleone.selenium.example.webdriver.instance.manager.withinterfaces.ChromeBrowserDriver;
 import com.qamindslab.moduleone.selenium.example.webdriver.instance.manager.withinterfaces.WebDriverManager;
