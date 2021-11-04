@@ -1,4 +1,4 @@
-package com.qamindslab.moduletwo.seleniumlocators.example;
+package com.qamindslab.moduletwo.seleniumlocators.example.locators;
 
 import com.qamindslab.moduleone.selenium.example.webdriver.instance.manager.withinterfaces.ChromeBrowserDriver;
 import com.qamindslab.moduleone.selenium.example.webdriver.instance.manager.withinterfaces.WebDriverManager;
@@ -6,14 +6,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class Locators {
-    public final static String CHROME_DRIVER = "webdriver.chrome.driver";
-    public final static String CHROME_DRIVER_PATH = "src/main/resources/chromedriver";
+import java.util.List;
+
+public class LocatorsLinkTag {
 
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty(CHROME_DRIVER, CHROME_DRIVER_PATH);
-
         WebDriver driver = WebDriverManager.getBrowserInstance(new ChromeBrowserDriver());
+        driver.manage().window().maximize();
 
         driver.get("https://www.saucedemo.com/");
 
@@ -30,6 +29,20 @@ public class Locators {
         loginButton.click();
 
         Thread.sleep(5000);
+
+        // Finding the 'PRODUCTS' title element through its tag name: 'span'
+        WebElement productTitle = driver.findElement(By.tagName("span"));
+        System.out.println(productTitle.getText());
+
+        // Finding link elements that has a link text as 'Sauce Labs Backpack'
+        WebElement backpack = driver.findElement(By.linkText("Sauce Labs Backpack"));
+        System.out.println(backpack.getText());
+
+        // Finding all link elements that contains a text 'Sauce Labs'.
+        List<WebElement> productList = driver.findElements(By.partialLinkText("Sauce Labs"));
+        for (WebElement product : productList){
+            System.out.println(product.getText());
+        }
 
         driver.quit();
     }
