@@ -10,7 +10,7 @@ public class Navigator {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
-        driver.get("https://es.wikipedia.org/wiki/The_Animatrix");
+        driver.get("https://www.dahuasecurity.com/la/");
         driver.navigate().to("https://www.casadellibro.com/libros-ebooks/gabriel-garcia-marquez/20092");
 
         driver.navigate().back();
