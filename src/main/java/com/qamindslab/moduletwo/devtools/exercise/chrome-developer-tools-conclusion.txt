@@ -1,0 +1,12 @@
+1. $x("//a")
+2. $x("//a/div")
+3. $x("//a/ancestor::div")
+4.Select class attribute of body element
+- $x("//body[@class]")
+5. Select all script descendant of head element
+- $x("*//descendant::head")
+- $x("//head/script/descendant")
+6. Select first div child of body element, and select following-sibling
+- $x("//body/div[1]/following-sibling::div")
+7. Select second div child of body element, and select preceding-sibling
+- $x("//body/div[2]/preceding-sibling::div")
