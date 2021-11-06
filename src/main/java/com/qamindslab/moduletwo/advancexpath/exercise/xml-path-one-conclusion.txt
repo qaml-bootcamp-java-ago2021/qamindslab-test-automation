@@ -1,1 +1,6 @@
 $x("THE XPATH")
+
+/ works for direct node
+// works to look from root
+./ is the current node
+/.. is previous node
