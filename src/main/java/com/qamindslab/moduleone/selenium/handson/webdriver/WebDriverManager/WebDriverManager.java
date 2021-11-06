@@ -1,4 +1,4 @@
-package com.qamindslab.moduleone.selenium.handson.webdriver.WebDriverManager;
+/*package com.qamindslab.moduleone.selenium.handson.webdriver.WebDriverManager;
 
 import java.io.File;
 import java.util.Locale;
@@ -29,3 +29,4 @@ public class WebDriverManager{
     }
 
 }
+*/

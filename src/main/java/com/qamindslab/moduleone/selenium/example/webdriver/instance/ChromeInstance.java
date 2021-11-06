@@ -8,14 +8,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ChromeInstance {
-<<<<<<< HEAD
+//<<<<<<< HEAD
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-=======
-    public static void main(String[] args) throws NotWebDriverImplementedException {
+//=======
+    //public static void main(String[] args) throws NotWebDriverImplementedException {
        // System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
       //  WebDriver driver = new ChromeDriver();
->>>>>>> main
+//>>>>>>> main
 
         //WebDriver driver = WebDriverManager.getDriver(Browser.CHROME);
 
