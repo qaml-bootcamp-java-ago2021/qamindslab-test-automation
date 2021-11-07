@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.StreamTokenizer;
 import java.util.StringTokenizer;
+import java.util.HashMap;
 
 public class TagsFrequencyCount {
 
@@ -11,27 +12,28 @@ public class TagsFrequencyCount {
 
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
+        driver.get("http://www.google.com");
+        String codigoFuente = driver.getPageSource();
 
-        //String codigoFuente = driver.getPageSource();
+        String [] repeticionesFuncion = codigoFuente.split("function");
+        String [] repeticionesScript = codigoFuente.split("script");
+        String [] repeticionesClass = codigoFuente.split("class");
+        String [] repeticionesID = codigoFuente.split("id");
+
+        System.out.println("Function aparece: "+ repeticionesFuncion.length);
+        System.out.println("Script aparece: "+ repeticionesScript.length);
+        System.out.println("Class aparece: "+ repeticionesClass.length);
+        System.out.println("Id  aparece: "+ repeticionesID.length);
+
         /*
-        StringTokenizer cadenaToken = new StringTokenizer(codigoFuente);
-        String palabraBuscar = "function";
-        int contador = 0;
-
-        driver.get("https://www.google.com");
-
-        while(cadenaToken.hasMoreElements()){
-            if(cadenaToken.nextElement().equals(palabraBuscar)){
-                contador ++;
-            }
-
+        String palabra= "function";
+        int repeticion = 0;
+        for(int index=0; index < codigoFuente.length(); index ++ ){
+            codigoFuente.substring(index).startsWith(palabra);
+            repeticion++;
         }
-        System.out.println(palabraBuscar + " aparece " + contador+ " veces");
-
-         */
-
-
-
+        System.out.println("Function aparece: "+ repeticion);
+        */
     }
 
 }
