@@ -4,3 +4,4 @@ $x("THE XPATH")
 // works to look from root
 ./ is the current node
 /.. is previous node
+@ symbol helps to find attributes like in: //div/@class
