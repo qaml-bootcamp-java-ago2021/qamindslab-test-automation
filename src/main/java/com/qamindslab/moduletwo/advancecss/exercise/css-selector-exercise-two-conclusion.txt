@@ -1,0 +1,13 @@
+http://www.espn.com.mx/
+
+Select all a element whose father is a div
+$$("div > a")
+
+Select all a elements inside a li element
+$$("li a")
+
+Select all li elements placed after a li element
+$$("li + li")
+
+Select all article preceded by a div
+$$("div ~ article")
