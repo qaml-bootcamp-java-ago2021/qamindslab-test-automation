@@ -1,0 +1,14 @@
+The object document help us find all elements in the DOM (document object model) in the Web Browser console.
+In the Web Browser console we can enter JavaScript programming language commands.
+
+Like passing the following commands with the page loaded - https://www.fitbit.com/uk/home:
+document.head - This shows the head element.
+
+document.body - This shows the body element.
+
+document.body.getElementsByClassName("brand-cont") - This find the elements by the input class name.
+Had to use "img-banner" as class name.
+
+document.body.getElementsByClassName("brand-cont")[0].setAttribute("class", "") - This one appends a
+new empty class attribute. Had to use "img-banner" as class name.
+
