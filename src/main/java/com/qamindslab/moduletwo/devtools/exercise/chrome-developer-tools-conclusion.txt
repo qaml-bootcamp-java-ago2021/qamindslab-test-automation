@@ -1,0 +1,2 @@
+Web Developers tools help us check the application from different perspectives.
+From checking source code to Network activity, asserts and performance.
