@@ -1,0 +1,13 @@
+To Get first found element:
+    document.querySelector("CSS SELECTOR")
+    $("CSS SELECTOR")
+
+To Get All found elements:
+1. Select all a element whose father is a div
+- $("div>a")
+2.- Select all a elements inside a li element
+- $("li.a") ; $("li a")
+3.- Select all li elements placed after a li element
+- $("li li") ; $("li + li")
+4.- Select all article preceded by a div
+- $("dive~article")

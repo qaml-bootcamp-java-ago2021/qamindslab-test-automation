@@ -3,5 +3,9 @@ To Get first found element:
     $("CSS SELECTOR")
 
 To Get All found elements:
-    document.querySelectorAll("CSS SELECTOR")
-    $$("CSS SELECTOR")
+1. Find element with id global-viewport
+- $("#global-viewport")
+2.- Find element with class link-text
+- $(".class, link-text")
+3. Find all elements
+- $("*")
