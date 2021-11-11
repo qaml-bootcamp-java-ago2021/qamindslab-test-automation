@@ -24,6 +24,8 @@
             <version>4.13.1</version>
             <scope>compile</scope>
         </dependency>
+        <!-- INSTALL TESTNG -->
+        <!-- INSTALL LOG4J -->
     </dependencies>
 
 
