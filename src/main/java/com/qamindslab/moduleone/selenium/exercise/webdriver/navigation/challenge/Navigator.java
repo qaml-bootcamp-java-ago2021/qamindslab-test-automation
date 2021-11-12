@@ -24,8 +24,9 @@ public class Navigator {
 
         driver.navigate().forward();
         System.out.println("Avanzando: " + driver.getCurrentUrl());
-        
-        
+
+        assert driver.getCurrentUrl().equals("https://www.facebook.com/") : "Revisa tu navegacion";
+
         driver.navigate().refresh();
         System.out.println("Refrescando: " + driver.getCurrentUrl());
 
