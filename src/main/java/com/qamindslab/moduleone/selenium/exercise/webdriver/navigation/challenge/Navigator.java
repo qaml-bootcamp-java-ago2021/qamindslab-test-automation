@@ -25,6 +25,7 @@ public class Navigator {
         driver.navigate().forward();
         System.out.println("Avanzando: " + driver.getCurrentUrl());
         
+        
         driver.navigate().refresh();
         System.out.println("Refrescando: " + driver.getCurrentUrl());
 

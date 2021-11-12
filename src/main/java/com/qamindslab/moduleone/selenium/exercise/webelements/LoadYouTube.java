@@ -19,7 +19,8 @@ public class LoadYouTube {
         elementoSearch.sendKeys("Selenium");
 
         WebElement elementoBoton = driver.findElement(By.id("//*[@id=\"search-icon-legacy\"]"));
-
+        elementoSearch.click();
+        elementoSearch.wait(5000);
         //driver.qui();
     }
 }
