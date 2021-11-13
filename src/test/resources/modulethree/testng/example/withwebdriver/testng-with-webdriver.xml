@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteForExample4" verbose="1">
+    <parameter name="baseUrl" value="https://www.google.com.mx/"></parameter>
+    <!--parameter name="browser" value="chrome"></parameter-->
+    <test name="TestNG Example 4">
+        <classes>
+            <class name="com.qamindslab.modulethree.testng.example.withwebdriver.TestNGWithWebDriver"></class>
+        </classes>
+    </test>
+</suite>
