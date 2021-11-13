@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG Example 3 Annotations">
+    <test name="Annotations with Inheritance">
+        <classes>
+            <class name="com.qamindslab.modulethree.testng.example.lifecycle.A"></class>
+            <class name="com.qamindslab.modulethree.testng.example.lifecycle.B"></class>
+        </classes>
+    </test>
+</suite>
