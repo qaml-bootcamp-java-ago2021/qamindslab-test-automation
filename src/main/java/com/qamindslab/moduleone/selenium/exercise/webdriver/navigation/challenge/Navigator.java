@@ -11,12 +11,15 @@ public class Navigator {
 
         driver.get("https://www.google.com");
         System.out.println("Url google: " + driver.getCurrentUrl());
+        tiempoDeCarga(driver, driver.getCurrentUrl());
 
         driver.navigate().to("https://www.facebook.com");
         System.out.println("Url Facebook: " + driver.getCurrentUrl());
+        tiempoDeCarga(driver, driver.getCurrentUrl());
 
         driver.navigate().to("https://www.espn.com.mx/");
         System.out.println("Url ESPN: " + driver.getCurrentUrl());
+        tiempoDeCarga(driver, driver.getCurrentUrl());
 
         driver.navigate().back();
         driver.navigate().back();
@@ -32,5 +35,15 @@ public class Navigator {
 
         //driver.close();
 
+    }
+    public static void tiempoDeCarga(WebDriver driver, String url){
+        long tiempoInicio;
+        long tiempoFin;
+        long tiempoTotal;
+        tiempoInicio = System.nanoTime();
+        driver.getCurrentUrl();
+        tiempoFin = System.nanoTime();
+        tiempoTotal = tiempoFin - tiempoInicio;
+        System.out.println("Para cargar: " + driver.getCurrentUrl() + " toma: "  + tiempoTotal + "ns");
     }
 }
