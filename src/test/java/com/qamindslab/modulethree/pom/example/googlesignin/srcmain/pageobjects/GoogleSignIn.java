@@ -52,8 +52,10 @@ public class GoogleSignIn extends BasePage {
         try{
             WebDriverWait wait = new WebDriverWait(driver, 10);
             wait.until(ExpectedConditions.visibilityOf(googleLogo));
+            logger.info("Google SignIn page is loaded: " + driver.getTitle());
             return true;
         }catch(RuntimeException ex){
+            logger.error("Google SignIn page was not loaded. " + ex);
             return false;
         }
     }
