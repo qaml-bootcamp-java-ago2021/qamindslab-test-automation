@@ -17,7 +17,7 @@ public class FacebookSessionCreator {
         WebElement textboxEmail = driver.findElement(By.id("email"));
         textboxEmail.sendKeys("ziriako@gmail.com");
         WebElement textboxPassword = driver.findElement(By.id("pass"));
-        textboxPassword.sendKeys("*********");
+        textboxPassword.sendKeys("******");
         WebElement botonLogin = driver.findElement(By.name("login"));
         botonLogin.click();
 
