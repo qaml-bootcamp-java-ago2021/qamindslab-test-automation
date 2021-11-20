@@ -32,9 +32,14 @@ public class BaseTest {
     }
 
     private static WebDriver getDriver(String browser) throws NotWebDriverImplementedException {
-
+        //https://stackoverflow.com/questions/38684175/how-to-click-allow-on-show-notifications-popup-using-selenium-webdriver
         if(browser.equalsIgnoreCase("chrome")){
+            // https://chromedriver.chromium.org/capabilities
+            // https://peter.sh/experiments/chromium-command-line-switches/
+
             Map<String, Object> prefs = new HashMap<>();
+            //add key and value to map as follows to switch off browser notification
+            //Pass the argument 1 to allow and 2 to block
 
             prefs.put("profile.default_content_setting_values.notifications", 2);
             ChromeOptions options = new ChromeOptions();
@@ -44,6 +49,8 @@ public class BaseTest {
             return new ChromeDriver(options);
 
         }else if (browser.equalsIgnoreCase("firefox")){
+            //https://searchfox.org/mozilla-central/source/browser/app/profile/firefox.js#571
+
             FirefoxProfile profile = new FirefoxProfile();
             profile.setPreference("permissions.default.desktop-notification", 1);
             DesiredCapabilities capabilities = DesiredCapabilities.firefox();
