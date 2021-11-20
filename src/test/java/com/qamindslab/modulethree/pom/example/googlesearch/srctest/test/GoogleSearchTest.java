@@ -22,6 +22,7 @@ public class GoogleSearchTest extends BaseTest {
     @Test
     public void openGoogle(){
         googleMainPage.open();
+
         Assert.assertTrue(googleMainPage.isLoaded());
     }
 
