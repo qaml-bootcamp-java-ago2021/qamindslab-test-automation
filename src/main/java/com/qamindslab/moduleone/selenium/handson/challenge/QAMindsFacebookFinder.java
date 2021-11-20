@@ -19,7 +19,7 @@ public class QAMindsFacebookFinder {
         WebElement textboxEmail = driver.findElement(By.id("email"));
         textboxEmail.sendKeys("vulcanraven@live.com.mx");
         WebElement textboxPassword = driver.findElement(By.id("pass"));
-        textboxPassword.sendKeys("AwaDd66herDzFG3");
+        textboxPassword.sendKeys("********");
         WebElement botonLogin = driver.findElement(By.name("login"));
         botonLogin.click();
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
