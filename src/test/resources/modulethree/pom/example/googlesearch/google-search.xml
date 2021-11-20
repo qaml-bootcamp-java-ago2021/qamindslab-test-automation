@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Google SignIn" verbose="1" >
+    <test name="Basic Regression">
+        <parameter name="browser" value="chrome" />
+        <groups>
+            <run>
+                <exclude name="brokenTests"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.qamindslab.modulethree.pom.example.googlesearch.srctest.test.GoogleSearchTest"></class>
+        </classes>
+    </test>
+</suite>
