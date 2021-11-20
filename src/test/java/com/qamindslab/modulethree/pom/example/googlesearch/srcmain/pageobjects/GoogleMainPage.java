@@ -1,5 +1,9 @@
 package com.qamindslab.modulethree.pom.example.googlesearch.srcmain.pageobjects;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.qamindslab.modulethree.configfiles.example.PropertyReader;
 import com.qamindslab.modulethree.pom.example.googlesearch.srcmain.common.BasePage;
 import org.openqa.selenium.Keys;
@@ -11,6 +15,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GoogleMainPage extends BasePage {
+    ExtentReports extentReports = new ExtentReports();
+    ExtentSparkReporter extentSparkReporter = new ExtentSparkReporter("target/Spark.html"); // Timestamp
+    ExtentTest extentTest;
+
     @FindBy(how = How.NAME, using = "q")
     private WebElement searchBox;
 
@@ -25,6 +33,7 @@ public class GoogleMainPage extends BasePage {
 
     public GoogleMainPage(WebDriver driver) {
         super(driver, PropertyReader.getProperty("selenium-configurations.properties", "GOOGLE_URL"));
+        extentReports.attachReporter(extentSparkReporter);
     }
 
     public GoogleResultsPage searchInGoogle(String searchTxt){
@@ -44,13 +53,23 @@ public class GoogleMainPage extends BasePage {
 
     @Override
     public boolean isLoaded(){
+        extentTest = extentReports.createTest("Loading Google Main Page.");
+
         try{
             WebDriverWait wait = new WebDriverWait(driver, 10);
             wait.until(ExpectedConditions.visibilityOf(doddle));
             logger.info("Google main page loaded");
+
+            extentTest.log(Status.PASS, "Google main page loaded");
+            extentReports.flush();
+
             return true;
         }catch (RuntimeException exception){
             logger.error("Google main page was not loaded: " + exception);
+
+            extentTest.log(Status.FAIL, "Google main page loaded");
+            extentReports.flush();
+
             return false;
         }
     }
