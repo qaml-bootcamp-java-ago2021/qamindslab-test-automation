@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="openGoogle" verbose="1">
+    <test name="googleUrl">
+        <parameter name="baseUrl" value="https://www.google.com.mx/"></parameter>
+        <!--parameter name="browser" value="chrome"></parameter-->
+        <groups>
+            <run>
+                <exclude name="brokenTest"></exclude>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.qamindslab.modulethree.testng.exercise.withwebdriver.GoogleURLTest"></class>
+        </classes>
+    </test>
+</suite>

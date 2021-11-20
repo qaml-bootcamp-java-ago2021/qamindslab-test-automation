@@ -1,6 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="openGoogle" verbose="1">
     <test name="googleUrl">
+
     <groups>
         <run>
             <exclude name="brokenTest"></exclude>
