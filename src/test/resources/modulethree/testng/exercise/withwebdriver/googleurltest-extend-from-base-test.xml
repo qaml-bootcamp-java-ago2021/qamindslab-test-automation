@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteForExcercise3" verbose="1">
+    <parameter name="baseUrl" value="https://www.google.com.mx/"></parameter>
+    <!--parameter name="browser" value="chrome"></parameter-->
+    <test name="TestNG Exercise 3">
+        <classes>
+            <class name="com.qamindslab.modulethree.testng.exercise.withwebdriver.GoogleURLTest"></class>
+        </classes>
+    </test>
+</suite>
