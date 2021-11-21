@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class BasePage {
     protected WebDriver driver;
     protected String baseUrl;
-    protected final Logger logger = LogManager.getLogger(com.qamindslab.modulethree.pom.example.googlesearch.srcmain.common.BasePage.class);
+    protected final Logger logger = LogManager.getLogger(BasePage.class);
 
     public BasePage(WebDriver driver, String baseUrl){
         this.driver = driver;

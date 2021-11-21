@@ -1,8 +1,7 @@
-package com.qamindslab.modulethree.pom.example.googlesignin.srcmain.pageobjects;
+package com.qamindslab.modulethree.configfiles.handson.srcmain.pageobjects;
 
 import com.qamindslab.modulethree.configfiles.example.PropertyReader;
-import com.qamindslab.modulethree.configfiles.handson.srcmain.pageobjects.GoogleSignInDenied;
-import com.qamindslab.modulethree.pom.example.googlesignin.srcmain.common.BasePage;
+import com.qamindslab.modulethree.configfiles.handson.srcmain.common.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,18 +26,15 @@ public class GoogleSignIn extends BasePage {
     @FindBy(how = How.ID, using = "logo")
     private WebElement googleLogo;
 
-    @FindBy(how = How.CLASS_NAME, using = "jGAaxb")
-    private WebElement showPassword;
-
     public GoogleSignIn(WebDriver driver) {
-        super(driver, PropertyReader.getProperty("selenium-configurations.properties", "URL"));
-
+        super(driver,  PropertyReader.getProperty("selenium-configurations.properties", "URL"));
     }
 
     public GoogleSignInDenied clickNext(){
         nextButton.click();
         return new GoogleSignInDenied(driver);
     }
+
     public void setEMail(String in){
         emailTextBox.sendKeys(in);
     }
@@ -62,10 +58,10 @@ public class GoogleSignIn extends BasePage {
         try{
             WebDriverWait wait = new WebDriverWait(driver, 10);
             wait.until(ExpectedConditions.visibilityOf(googleLogo));
-            logger.info("Google Results page loaded: " + currentSearch());
+            logger.info("Google SignIn page is loaded: " + driver.getTitle());
             return true;
-        }catch (RuntimeException exception){
-            logger.error("Google Results page was not loaded: " + exception);
+        }catch(RuntimeException ex){
+            logger.error("Google SignIn page was not loaded. " + ex);
             return false;
         }
     }
