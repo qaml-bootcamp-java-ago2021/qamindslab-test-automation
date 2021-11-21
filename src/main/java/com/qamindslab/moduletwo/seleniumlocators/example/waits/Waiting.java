@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -19,8 +20,10 @@ import java.util.function.Function;
 // https://www.selenium.dev/selenium/docs/api/java/index.html?index-all.html
 public class Waiting {
     public static void main(String[] args) {
-        WebDriver driver = WebDriverManager.getBrowserInstance(new ChromeBrowserDriver());
-        driver.get("file:///home/marcodejesus/IdeaProjects/BPA-Agosto2021/qamindslab-test-automation/src/main/java/com/qamindslab/moduletwo/seleniumlocators/example/waits/index.html");
+        //WebDriver driver = WebDriverManager.getBrowserInstance(new ChromeBrowserDriver());
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("D:\\HandsonQA\\Proyecto\\qamindslab-test-automation\\src\\main\\java\\com\\qamindslab\\moduletwo\\seleniumlocators\\example\\waits\\index.html");
 
         // Maximize the browser window.
         driver.manage().window().maximize();
@@ -33,6 +36,7 @@ public class Waiting {
         WebElement pTag1 = driver.findElement(By.tagName("p"));
         System.out.println(pTag1.getText());
 
+/*
         // Explicitly Waiting time for elements to be on the web page.
         // https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/support/ui/WebDriverWait.html
         WebDriverWait wait = new WebDriverWait(driver, 5);
@@ -53,7 +57,9 @@ public class Waiting {
             public WebElement apply(WebDriver driver) {
                 return driver.findElement(By.tagName("p"));
             }
-        });*/
+        });
         System.out.println(pTag3.getText());
+        */
     }
 }
+
