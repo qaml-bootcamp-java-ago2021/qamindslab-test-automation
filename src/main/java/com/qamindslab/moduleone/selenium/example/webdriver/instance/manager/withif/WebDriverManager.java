@@ -21,7 +21,7 @@ public class WebDriverManager {
                 driver = new FirefoxDriver();
                 break;
             case CHROME:
-                File chromeFilePath = new File(rootPath, "chromedriver");
+                File chromeFilePath = new File(rootPath, "chromedriver.exe");
 
                 System.setProperty("webdriver.chrome.driver", chromeFilePath.getPath());
                 driver = new ChromeDriver();
@@ -37,7 +37,7 @@ public class WebDriverManager {
         File rootPath = new File("src/main/resources");
 
         if (browser.toLowerCase(Locale.ROOT).equals("chrome")) {
-            File chromeFilePath = new File(rootPath, "chromedriver");
+            File chromeFilePath = new File(rootPath, "chromedriver.exe");
 
             System.setProperty("webdriver.chrome.driver", chromeFilePath.getPath());
             return new ChromeDriver();

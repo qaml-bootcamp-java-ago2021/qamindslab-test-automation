@@ -7,5 +7,9 @@ public class WebDriverManager {
     public static WebDriver getBrowserInstance(BrowserDriver driver){
         return driver.getInstanceBrowserDriver();
     }
+
+
+
+
 }
 

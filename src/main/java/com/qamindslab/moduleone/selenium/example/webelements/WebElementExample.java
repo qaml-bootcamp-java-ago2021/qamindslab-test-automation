@@ -15,7 +15,7 @@ public class WebElementExample {
         driver.get("http://automationpractice.com/index.php");
 
         WebElement companyLogo = driver.findElement(By.id("header_logo"));
-        List<WebElement> companyLogos = driver.findElements(By.id("header_logoa"));
+        List<WebElement> companyLogos = driver.findElements(By.id("header_logo"));
 
         companyLogo.click();
 
