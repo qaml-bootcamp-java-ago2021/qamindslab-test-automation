@@ -1,1 +1,8 @@
 $x("THE XPATH")
+Se ve el contenido del html, cuando se pone la // busca desde la raiz hasta donde encontro un html
+al ponerle ejem //body busca el elemento body dese la raíz hasta donde encuentra el primer body
+cuando es ./html busca del nodo actual hasta el elemento html
+al buscar un div que este dentro del html y body html/body/div son los divs que estan dentro de body pero no directamente
+al usar //div encuentra todos los divs
+//body/div con esto se omite lo que esta arriba del body
+//input/@class busca desde la raíz y encuentra a todos los elementos input que tengan como atributo class
