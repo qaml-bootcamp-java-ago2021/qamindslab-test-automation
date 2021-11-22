@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="GMail Test Suite" verbose="1" >
+    <test name="Final Project">
+        <parameter name="browser" value="chrome" />
+        <packages>
+            <package name="com.qamindslab.modulefour.srctest.test" />
+        </packages>
+    </test>
+</suite>
