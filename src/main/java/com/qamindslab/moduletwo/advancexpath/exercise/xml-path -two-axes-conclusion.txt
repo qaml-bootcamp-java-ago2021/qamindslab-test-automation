@@ -1,0 +1,5 @@
+$x("//*/a[1]/ancestor::div") para seleccionar cualquier elemento y buscar en div
+$x("//body/@class")  busca desde la raíz y encuentra a todos los elementos body que tengan como atributo class
+$x("//head/script") busca todos los script del elemento principal
+$x("//body/div[1]/following-sibling::div[2]") Selecciona el primer elemento div hijo del cuerpo y seleccione siguiente-hermano
+$x("//body/div[1]/following-sibling::div[0]") Selecciona el segundo elemento div hijo del cuerpo y seleccione el hermano anterior

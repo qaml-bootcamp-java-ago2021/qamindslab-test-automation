@@ -5,3 +5,8 @@ To Get first found element:
 To Get All found elements:
     document.querySelectorAll("CSS SELECTOR")
     $$("CSS SELECTOR")
+
+    document.querySelector("div>a")
+
+
+    document.querySelectorAll("div>a")

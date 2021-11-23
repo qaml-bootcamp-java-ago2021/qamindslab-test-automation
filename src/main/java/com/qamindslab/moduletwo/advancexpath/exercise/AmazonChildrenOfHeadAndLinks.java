@@ -13,7 +13,7 @@ public class AmazonChildrenOfHeadAndLinks {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = WebDriverManager.getBrowserInstance(new ChromeBrowserDriver());
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.amazon.com.mx/");
         List<WebElement> elemnt = driver.findElements(By.xpath("//a"));
         for(WebElement hiperlinks:elemnt){

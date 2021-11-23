@@ -6,26 +6,33 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class AmazonAxesStrategy {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = WebDriverManager.getBrowserInstance(new ChromeBrowserDriver());
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        driver.get("https://www.amazon.com.mx/");
-        WebElement div = driver.findElement(By.xpath("//body/div[1]"));
-            System.out.println("body/div: "+div.getText());
-        WebElement bodydivl = driver.findElement(By.xpath("//body/div[last()]"));
-        System.out.println("Last: "+bodydivl.getText());
-        WebElement nav = driver.findElement(By.xpath("//*[@role='navigation']"));
-        System.out.println("navigator: "+nav.getText());
-        WebElement clas = driver.findElement(By.xpath("//*[contains(@class,'nav')]"));
-        System.out.println("Class: "+clas.getText());
-        WebElement submit = driver.findElement(By.xpath("//*[@type='submit'][contains(@class,'nav-input')]"));
-        System.out.println("sumbit: "+submit.getText());
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.get("https://es.wikipedia.org/wiki/Selenium");
+        List<WebElement> elemnt = driver.findElements(By.xpath("//a[contains(text(),'Selenium')]"));
+        List <String> list =new ArrayList<>();
+        for(WebElement hiperlinks:elemnt){
+          list.add(hiperlinks.getAttribute("href"));
+        }
 
-        Thread.sleep(10000);
+        for(String links:list){
+            driver.navigate().to(links);
+            System.out.println(driver.getTitle().toUpperCase());
+            List<WebElement> elemntdes = driver.findElements(By.xpath("//body/descendant::a/following-sibling::*"));
+            for(WebElement link :elemntdes){
+                System.out.println(link.getText());
+
+            }
+            driver.navigate().back();
+        }
+
         driver.close();
     }
 }

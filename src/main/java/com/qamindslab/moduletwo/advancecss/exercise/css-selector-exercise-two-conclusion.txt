@@ -1,0 +1,5 @@
+document.querySelector("div>a")
+document.querySelectorAll("div>a")encuentra todos los elemento cuando el padre es div
+document.querySelector("li a") encuentra todos los elementos dentro de un elemento li
+document.querySelector("li +li") encuentra todos los elementos li colocados después de un elemento li
+document.querySelector("div  article") encuentra todos los articulos que estan en el div
