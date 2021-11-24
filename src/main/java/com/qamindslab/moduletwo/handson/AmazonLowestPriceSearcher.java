@@ -38,7 +38,7 @@ public class AmazonLowestPriceSearcher {
         Wait<WebDriver> wait=new FluentWait<>(driver).withTimeout(Duration.ofSeconds(5)).pollingEvery(Duration.ofSeconds(1)).ignoring(NoSuchElementException.class);
         By pag=By.cssSelector("div[class='sg-col-inner']");
         wait.until(x->x.findElement(pag));
-        List<WebElement> elemnt = driver.findElements(By.cssSelector("[class='s-result-item s-asin sg-col-0-of-12 sg-col-16-of-20 sg-col s-widget-spacing-small sg-col-12-of-16]"));
+        List<WebElement> elemnt = driver.findElements(By.cssSelector("[class='s-result-item s-asin sg-col-0-of-12 sg-col-16-of-20 sg-col s-widget-spacing-small sg-col-12-of-16']"));
         for(WebElement item:elemnt){
             WebElement Item = driver.findElement(By.cssSelector("span[class='a-size-medium a-color-base a-text-normal']"));
         try{

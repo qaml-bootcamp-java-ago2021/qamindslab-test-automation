@@ -4,7 +4,7 @@ public class Bike {
     private String brand;
     private int speed;
 
-    Bike(String brand){
+    protected Bike(String brand){
         this.brand = brand;
         this.speed = 0;
     }
@@ -13,4 +13,6 @@ public class Bike {
         this.speed += 1;
         System.out.println(String.format("%s speed %d", this.brand, this.speed));
     }
+
+
 }
