@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Google SignIn" verbose="1" >
+    <test name="Basic Regression">
+        <parameter name="browser" value="chrome" />
+        <parameter name="userEmail" value="banizhermana@gmail.com" />
+        <groups>
+            <run>
+                <exclude name="brokenTests"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.qamindslab.modulefour.srctest.test.GmailLoginTest"></class>
+        </classes>
+    </test>
+</suite>

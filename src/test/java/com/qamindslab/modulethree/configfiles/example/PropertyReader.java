@@ -10,7 +10,7 @@ import java.util.Properties;
 
 public class PropertyReader {
     private static final Logger logger = LogManager.getLogger(PropertyReader.class);
-    private static final String rootPath = "src/test/resources/modulethree/configfiles/example/";
+    private static final String rootPath = "src/test/resources/modulefour/jk/propertieFiles/";
 
     public static String getProperty(String fileName, String name){
         Properties properties = new Properties();

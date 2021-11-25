@@ -1,4 +1,4 @@
-package com.qamindslab.modulethree.pom.example.googlesignin.srctest.common;
+package com.qamindslab.modulefour.srctest.common;
 
 import com.qamindslab.modulethree.pom.example.googlesignin.srctest.common.exceptions.NotWebDriverImplementedException;
 import org.openqa.selenium.WebDriver;
@@ -18,12 +18,10 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
-
     public WebDriver driver;
 
     @BeforeSuite
     @Parameters("browser")
-
     public void setup(@Optional("chrome") String browser){
         try {
             driver = getDriver(browser);
@@ -34,17 +32,11 @@ public class BaseTest {
     }
 
     private static WebDriver getDriver(String browser) throws NotWebDriverImplementedException {
-        //https://stackoverflow.com/questions/38684175/how-to-click-allow-on-show-notifications-popup-using-selenium-webdriver
 
-        File rootPath = new File("/home/marcodejesus/IdeaProjects/BPA-Agosto2021/ui-test-automation-framework/src/main/resources/");
+        File rootPath = new File("/home/marena/Documents/personal/curso/Java/part_2_selenium/repositorio/qamindslab-test-automation/src/main/resources");
 
         if(browser.equalsIgnoreCase("chrome")){
-            // https://chromedriver.chromium.org/capabilities
-            // https://peter.sh/experiments/chromium-command-line-switches/
-
             Map<String, Object> prefs = new HashMap<String, Object>();
-            //add key and value to map as follows to switch off browser notification
-            //Pass the argument 1 to allow and 2 to block
             prefs.put("profile.default_content_setting_values.notifications", 2);
             ChromeOptions options = new ChromeOptions();
             options.setExperimentalOption("prefs", prefs);
@@ -53,8 +45,6 @@ public class BaseTest {
             System.setProperty("webdriver.chrome.driver", chromeFilePath.getPath());
             return new ChromeDriver(options);
         }else if(browser.equalsIgnoreCase("firefox")){
-            //https://searchfox.org/mozilla-central/source/browser/app/profile/firefox.js#571
-
             FirefoxProfile profile = new FirefoxProfile();
             profile.setPreference("permissions.default.desktop-notification", 1);
             DesiredCapabilities capabilities=DesiredCapabilities.firefox();
