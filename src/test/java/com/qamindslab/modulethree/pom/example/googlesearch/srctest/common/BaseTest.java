@@ -35,7 +35,7 @@ public class BaseTest {
     private static WebDriver getDriver(String browser) throws NotWebDriverImplementedException {
         //https://stackoverflow.com/questions/38684175/how-to-click-allow-on-show-notifications-popup-using-selenium-webdriver
 
-        File rootPath = new File("/home/marcodejesus/IdeaProjects/BPA-Agosto2021/ui-test-automation-framework/src/main/resources/");
+        File rootPath = new File("src/main/resources/");
 
         if(browser.equalsIgnoreCase("chrome")){
             // https://chromedriver.chromium.org/capabilities
@@ -48,7 +48,7 @@ public class BaseTest {
             ChromeOptions options = new ChromeOptions();
             options.setExperimentalOption("prefs", prefs);
 
-            File chromeFilePath = new File(rootPath, "chromedriver");
+            File chromeFilePath = new File(rootPath, "chromedriver.exe");
             System.setProperty("webdriver.chrome.driver", chromeFilePath.getPath());
             return new ChromeDriver(options);
         }else if(browser.equalsIgnoreCase("firefox")){

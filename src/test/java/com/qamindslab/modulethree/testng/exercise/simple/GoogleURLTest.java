@@ -1,6 +1,7 @@
+package com.qamindslab.modulethree.testng.exercise.simple;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-package com.qamindslab.modulethree.testng.exercise.simple;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 

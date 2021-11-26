@@ -1,0 +1,2 @@
+Las herramientas de los desarrolladores web ayudan a verificar la aplicación desde puntos variados
+Ayuan a verificar codigo, actividades de la red y rendimiento

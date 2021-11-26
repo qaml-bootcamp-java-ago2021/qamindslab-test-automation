@@ -1,0 +1,9 @@
+El documento de objeto encuentra todos los elementos Dom en la consola del navegador
+desde la consola podemos escribir comandos
+document.body: muestra el elemento del cuerpo
+
+document.body.getElementsByClassName ("brand-cont"): muestra los elementos por el nombre de la clase
+"img-banner" es la clase
+
+document.body.getElementsByClassName ("brand-cont") [0] .setAttribute ("class", "")  agrega un
+nuevo atributo de clase vacía

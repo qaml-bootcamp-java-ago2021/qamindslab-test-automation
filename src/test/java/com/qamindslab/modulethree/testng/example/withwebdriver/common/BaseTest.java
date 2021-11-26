@@ -45,7 +45,7 @@ public class BaseTest {
             ChromeOptions options = new ChromeOptions();
             options.setExperimentalOption("prefs", prefs);
 
-            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
             return new ChromeDriver(options);
 
         }else if (browser.equalsIgnoreCase("firefox")){
