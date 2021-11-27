@@ -20,6 +20,11 @@ public class GmailPasswordPage extends BasePage {
     @FindBy(how = How.CSS, using = "button[type='button'] span")
     private WebElement nextButton;
 
+    @FindBy(how = How.CSS, using = ".OyEIQ > div:nth-child(2) > span:nth-child(1)")
+    private WebElement errorMessage;
+
+
+
     public GmailPasswordPage(WebDriver driver) {
         super(driver, driver.getCurrentUrl());
     }
@@ -28,6 +33,10 @@ public class GmailPasswordPage extends BasePage {
         passwordextBox.sendKeys(in);
         nextButton.click();
         return new GmailInboxPage(driver);
+    }
+
+    public String getErrorMessage(){
+        return errorMessage.getText();
     }
 
     @Override

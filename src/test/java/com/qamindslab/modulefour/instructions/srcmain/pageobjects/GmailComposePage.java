@@ -47,7 +47,7 @@ public class GmailComposePage extends BasePage {
     @FindBy(how = How.CSS, using = "div.Ar.Au>div.Am.Al.editable.LW-avf.tS-tW")
     private WebElement messageTextBox;
 
-    @FindBy(how = How.XPATH, using = "//a[text()='Enviados']")
+    @FindBy(how = How.CSS, using = "div[class='dC'] > div[class='T-I J-J5-Ji aoO v7 T-I-atl L3']")
     private WebElement sentLink;
 
     @FindBy(how = How.XPATH, using = "//span/span[contains(text(), 'TEST AUTOMATION WITH SELENIUM')]")
@@ -74,6 +74,8 @@ public class GmailComposePage extends BasePage {
         sendButton.click();
 
         sentLink.click();
+
+        System.out.println("Current URL = " + driver.getCurrentUrl());
     }
 
     public boolean wasEmailSent(){

@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertTrue;
+import static org.testng.Assert.assertEquals;
 
 public class GmailPageTest extends BaseTest {
     private GmailSignInPage gmailSignInPage;

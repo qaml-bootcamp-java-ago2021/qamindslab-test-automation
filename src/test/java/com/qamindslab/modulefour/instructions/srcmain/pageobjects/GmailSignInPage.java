@@ -22,6 +22,9 @@ public class GmailSignInPage extends BasePage {
     @FindBy(how = How.ID, using = "logo")
     private WebElement googleLogo;
 
+    @FindBy(how = How.CLASS_NAME, using = "o6cuMc")
+    private WebElement errorMessage;
+
     public GmailSignInPage(WebDriver driver) {
         super(driver, "https://www.gmail.com");
     }
@@ -32,6 +35,14 @@ public class GmailSignInPage extends BasePage {
 
     public void clickNextButton(){
         nextButton.click();
+    }
+
+    public String getErrorMessage(){
+        return errorMessage.getText();
+    }
+
+    public void clearEmailInput(){
+        emailTextBox.clear();
     }
 
     public GmailPasswordPage singIn(String username){
