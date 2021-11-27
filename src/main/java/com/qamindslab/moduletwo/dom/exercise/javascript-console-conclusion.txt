@@ -1,0 +1,1 @@
+El DOM es un documento representado como HTML o XML nos permite localizar los elementos mediante xpath, CSSelector 
