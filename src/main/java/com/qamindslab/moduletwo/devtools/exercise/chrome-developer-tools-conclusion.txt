@@ -1,0 +1,1 @@
+This tools is built directly on the chrome browser and help us to debug the application, see network activity, performance, HTML, etc.
