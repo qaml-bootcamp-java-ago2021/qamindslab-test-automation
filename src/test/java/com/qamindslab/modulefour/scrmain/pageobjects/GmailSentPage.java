@@ -18,8 +18,7 @@ public class GmailSentPage extends BasePage {
     @FindBy(how = How.CSS, using = "")
     private List<WebElement> allSentEmails;
 
-    //@FindBy(how = How.XPATH, using = "//div[@class='ae4 UI nH oy8Mbf Zs']//table[@class='F cf zt']//span/span[contains(text(),'Daniel this is a test!')]")
-    @FindBy(how = How.XPATH, using = "//div[contains(@class, 'ae4 UI nH oy8Mbf')]//table[@class='F cf zt']//span/span[contains(text(),'Correo Nuevo!')]")
+     @FindBy(how = How.XPATH, using = "//div[contains(@class, 'ae4 UI nH oy8Mbf')]//table[@class='F cf zt']//span/span[contains(text(),'Correo Nuevo!')]")
     private WebElement lastEmailSentText;
 
     public GmailSentPage(WebDriver driver){
@@ -38,9 +37,7 @@ public class GmailSentPage extends BasePage {
     public boolean isLoaded(){
         try{
             WebDriverWait wait = new WebDriverWait(driver, 10);
-            //wait.until(ExpectedConditions.invisibilityOf());
-            //wait.until(ExpectedConditions.textToBePresentInElement(searchBox, "in:sent"));
-            wait.until(ExpectedConditions.visibilityOf(searchXButton));
+            wait.until(ExpectedConditions.textToBePresentInElement(searchXButton, "in:sent"));
             logger.info("Sent page is loaded.");
             return true;
         }catch (RuntimeException exception){

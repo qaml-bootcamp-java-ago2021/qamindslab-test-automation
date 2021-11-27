@@ -8,7 +8,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class GmailProfilePopupPage extends BasePage {
+public class GmailProfilePopPage extends BasePage {
 
     @FindBy(how = How.CSS, using = "[class='gb_Ha gbip gb_eb'][title='Profile']")
     private WebElement imageProfile;
@@ -19,7 +19,7 @@ public class GmailProfilePopupPage extends BasePage {
     @FindBy(how = How.CLASS_NAME, using = "gb_nb")
     private WebElement email;
 
-    public GmailProfilePopupPage(WebDriver driver) {
+    public GmailProfilePopPage(WebDriver driver) {
         super(driver, driver.getCurrentUrl());
     }
 

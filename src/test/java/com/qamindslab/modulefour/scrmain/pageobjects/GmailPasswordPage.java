@@ -34,16 +34,15 @@ public class GmailPasswordPage extends BasePage {
     public String getErrorMessage(){
         return errorMessage.getText();
     }
-
     @Override
     public boolean isLoaded(){
         try{
             WebDriverWait wait = new WebDriverWait(driver, 10);
             wait.until(ExpectedConditions.visibilityOf(passwordTextBox));
-            logger.info("Gmail Password page was loaded successfully.");
+            logger.info("Gmail Password successfully.");
             return true;
         }catch (RuntimeException exception){
-            logger.info("Gmail Password page was not loaded. " + exception);
+            logger.info("Gmail Password was not loaded. " + exception);
             return false;
         }
     }

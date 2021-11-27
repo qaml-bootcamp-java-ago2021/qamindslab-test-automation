@@ -47,10 +47,10 @@ public class GmailLandingPage extends BasePage {
         super(driver, driver.getCurrentUrl());
     }
 
-    public com.qamindslab.modulefour.scrmain.pageobjects.GmailProfilePopupPage showProfilePopup(){
+    public GmailProfilePopPage showProfilePopup(){
         profileButton.click();
 
-        return new com.qamindslab.modulefour.scrmain.pageobjects.GmailProfilePopupPage(driver);
+        return new GmailProfilePopPage(driver);
     }
 
     public GmailComposeEmailPage composeEmail(){
@@ -113,10 +113,10 @@ public class GmailLandingPage extends BasePage {
         try{
             WebDriverWait wait = new WebDriverWait(driver, 10);
             wait.until(ExpectedConditions.visibilityOf(gmailLogo));
-            logger.info("Gmail landing page was loaded.");
+            logger.info("Gmail landing");
             return true;
         }catch (RuntimeException exception){
-            logger.info("Gmail landing page was not loaded: " + exception);
+            logger.info("Gmail landing was not loaded: " + exception);
             return false;
         }
     }

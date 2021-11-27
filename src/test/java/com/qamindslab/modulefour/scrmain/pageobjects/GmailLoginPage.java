@@ -37,7 +37,6 @@ public class GmailLoginPage extends BasePage {
         emailTextBox.clear();
         emailTextBox.sendKeys(gmailAccount);
         nextButton.click();
-
         return new GmailPasswordPage(driver);
     }
 

@@ -3,7 +3,6 @@ package com.qamindslab.modulefour.srctest.test;
 import com.qamindslab.modulefour.scrmain.pageobjects.*;
 import com.qamindslab.modulefour.srctest.common.BaseTest;
 import com.qamindslab.modulethree.configfiles.example.PropertyReader;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -13,12 +12,12 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class GmailTest extends BaseTest {
+public class GmailTestP extends BaseTest {
 
     private GmailLoginPage gmailLoginPage;
     private GmailPasswordPage gmailPasswordPage;
     private GmailLandingPage gmailLandingPage;
-    private GmailProfilePopupPage gmailProfilePopupPage;
+    private GmailProfilePopPage gmailProfilePopupPage;
     private GmailComposeEmailPage composeEmailPage;
     private GmailSentPage gmailSentPage;
 
@@ -131,11 +130,5 @@ public class GmailTest extends BaseTest {
         assertEquals(gmailSentPage.getLastEmailSentText(), "Correo Nuevo!", "Correo Nuevo!");
     }
 
-    @Test(dependsOnMethods = {"validateEmailIsSent"})
-    public void validateInboxEmailsHaveDescriptionAndDate(){
-        gmailLandingPage.clickOnInbox();
 
-        gmailLandingPage.getAllEmailDescription().stream().forEach(Assert::assertNotNull);
-        gmailLandingPage.getAllEmailDates().stream().forEach(Assert::assertNotNull);
-    }
 }

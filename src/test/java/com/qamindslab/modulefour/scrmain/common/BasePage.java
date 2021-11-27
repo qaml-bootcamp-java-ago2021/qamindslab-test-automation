@@ -25,7 +25,7 @@ public class BasePage {
     }
 
     public boolean isLoaded(){
-        logger.info(this.getClass().toString() + " is loaded");;
+        logger.info(this.getClass().toString() + " cargando..");;
         return true;
     }
 

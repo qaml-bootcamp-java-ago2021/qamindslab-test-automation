@@ -99,13 +99,6 @@ public class GmailComposeEmailPage extends BasePage {
 
     }
 
-    public void sendEmailWithCarbonCopy(String to, String cc, String subject, String message){
-
-    }
-
-    public void sendEmailWithBlindCarbonCopy(String to, String bcc, String subject, String message){
-
-    }
 
     public void sendEmailWithCCAndBCC(String to, String cc, String bcc, String subject, String message){
         sendComposedEmail(to, cc, bcc, subject, message);
