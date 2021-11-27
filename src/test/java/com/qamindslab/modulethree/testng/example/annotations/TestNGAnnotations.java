@@ -1,4 +1,4 @@
-/*package com.qamindslab.modulethree.testng.example.annotations;
+package com.qamindslab.modulethree.testng.example.annotations;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -22,4 +22,3 @@ public class TestNGAnnotations {
         System.out.println("Test 3");
     }
 }
-*/
