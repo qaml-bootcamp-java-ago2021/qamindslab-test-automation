@@ -1,7 +1,7 @@
 package com.qamindslab.modulethree.configfiles.exercise.srctest.common;
 
 import com.qamindslab.modulethree.configfiles.example.PropertyReader;
-import com.qamindslab.modulethree.configfiles.exercise.srctest.common.exceptions.NotWebDriverImplementedException;
+import com.qamindslab.modulethree.testng.example.withwebdriver.common.exceptions.NotWebDriverImplementedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
