@@ -1,0 +1,9 @@
+The javascript console help us to find all elements on the DOM. We can use different methods to find elements.
+
+The document is the key word for the DOM and it has differnet methods.
+
+document.head // Shows  the head element.
+document.getElementByID() // Find Element by ID
+document.getElementByName() // Find Element by Name
+
+It is very useful to practice the commands on console, then we can use them on code knowing they work.

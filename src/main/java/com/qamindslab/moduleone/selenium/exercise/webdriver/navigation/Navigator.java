@@ -50,23 +50,5 @@ public class Navigator {
         driver.navigate().refresh();
         driver.close();
 
-
-        /*driver.findElement(By.name("q")).click();
-        driver.findElement(By.name("q")).sendKeys("metallica");
-        driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
-        {
-            WebElement element = driver.findElement(By.linkText("metallica.com"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element).perform();
-        }
-        {
-            WebElement element = driver.findElement(By.tagName("body"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element, 0, 0).perform();
-        }
-        driver.findElement(By.cssSelector("div:nth-child(3) > .tF2Cxc .LC20lb")).click();
-        driver.findElement(By.cssSelector(".svg-menu-white-dims")).click();
-        driver.findElement(By.linkText("Upcoming Dates")).click();
-        driver.findElement(By.cssSelector(".show:nth-child(1) .venue-name > .venue-name")).click();*/
     }
 }

@@ -32,9 +32,12 @@ public class TagsFrequencyCount {
         driver.manage().window().setSize(new Dimension(1661, 933));
 
         String sourceCode = driver.getPageSource();
+        System.out.println("function on page = " + sourceCode.split("function").length);
+        System.out.println("scripts on page = " + sourceCode.split("script").length);
+        System.out.println("classes on page = " + sourceCode.split("class=").length);
+        System.out.println("IDs on page = " + sourceCode.split("id=").length);
 
-
-        Thread.sleep(5000);
+        Thread.sleep(1000);
         driver.close();
     }
 }
