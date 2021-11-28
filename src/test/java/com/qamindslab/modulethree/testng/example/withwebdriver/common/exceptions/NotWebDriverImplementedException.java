@@ -2,4 +2,7 @@ package com.qamindslab.modulethree.testng.example.withwebdriver.common.exception
 
 public class NotWebDriverImplementedException extends Exception{
 
+    public NotWebDriverImplementedException(String errorMessage){
+        super(errorMessage);
+    }
 }
