@@ -1,9 +1,12 @@
-package com.qamindslab.modulethree.pom.example.googlesignin.srctest.common;
+package com.qamindslab.modulefour.srctest.common;
 
-import com.qamindslab.modulethree.pom.example.googlesignin.srctest.common.exceptions.NotWebDriverImplementedException;
+import com.qamindslab.modulefour.srctest.common.exceptions.NotWebDriverImplementedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
@@ -15,6 +18,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
+
     public WebDriver driver;
 
     @BeforeSuite
@@ -41,14 +45,27 @@ public class BaseTest {
             //add key and value to map as follows to switch off browser notification
             //Pass the argument 1 to allow and 2 to block
             prefs.put("profile.default_content_setting_values.notifications", 2);
+            prefs.put("intl.accept_languages", "en-US");
+
             ChromeOptions options = new ChromeOptions();
             options.setExperimentalOption("prefs", prefs);
+            options.addArguments("--lang=en-US");
 
             File chromeFilePath = new File(rootPath, "chromedriver");
             System.setProperty("webdriver.chrome.driver", chromeFilePath.getPath());
             return new ChromeDriver(options);
-        }
-        else{
+        }else if(browser.equalsIgnoreCase("firefox")){
+            //https://searchfox.org/mozilla-central/source/browser/app/profile/firefox.js#571
+
+            FirefoxProfile profile = new FirefoxProfile();
+            profile.setPreference("permissions.default.desktop-notification", 1);
+            DesiredCapabilities capabilities=DesiredCapabilities.firefox();
+            capabilities.setCapability(FirefoxDriver.PROFILE, profile);
+
+            File firefoxFilePath = new File(rootPath,"geckodriver");
+            System.setProperty("webdriver.gecko.driver", firefoxFilePath.getPath());
+            return new FirefoxDriver(capabilities);
+        }else{
             throw new NotWebDriverImplementedException("The Browser driver you're looking for is not implemented yet: " + browser);
         }
     }

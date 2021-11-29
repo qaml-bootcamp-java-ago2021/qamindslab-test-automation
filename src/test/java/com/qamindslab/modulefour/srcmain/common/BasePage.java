@@ -1,12 +1,12 @@
-package com.qamindslab.modulethree.pom.example.googlesignin.srcmain.common;
+package com.qamindslab.modulefour.srcmain.common;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
+
     protected WebDriver driver;
     protected String baseUrl;
     protected final Logger logger = LogManager.getLogger(BasePage.class);
@@ -25,13 +25,13 @@ public class BasePage {
     }
 
     public boolean isLoaded(){
-        return false;
+        logger.info(this.getClass().toString() + " is loaded");;
+        return true;
     }
 
     public void close(){
         logger.info("Closing " + this.getClass().toString());
         this.driver.close();
-        logger.info(this.getClass().toString() + " closed.");
+        logger.info(this.getClass().toString() + " closed");
     }
-
 }

@@ -1,7 +1,7 @@
-package com.qamindslab.modulethree.pom.example.googlesignin.srcmain.pageobjects;
+package com.qamindslab.modulefour.srcmain.pageobjects;
 
+import com.qamindslab.modulefour.srcmain.common.BasePage;
 import com.qamindslab.modulethree.configfiles.example.PropertyReader;
-import com.qamindslab.modulethree.pom.example.googlesignin.srcmain.common.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class GoogleSignIn extends BasePage {
+public class GmailLoginPage extends BasePage {
 
     @FindBy(how = How.ID, using = "identifierId")
     private WebElement emailTextBox;
@@ -26,47 +26,34 @@ public class GoogleSignIn extends BasePage {
     @FindBy(how = How.ID, using = "logo")
     private WebElement googleLogo;
 
-    @FindBy(how = How.CLASS_NAME, using = "jGAaxb")
-    private WebElement showPassword;
+    @FindBy(how = How.CLASS_NAME, using = "o6cuMc")
+    private WebElement errorMessage;
 
-    public GoogleSignIn(WebDriver driver) {
-        super(driver, PropertyReader.getProperty("selenium-configurations.properties", "URL"));
-
+    public GmailLoginPage(WebDriver driver){
+        super(driver, PropertyReader.getProperty("selenium-configurations.properties", "GMAIL_URL"));
     }
 
-    /*public GoogleSignInDenied clickNext(){
+    public GmailPasswordPage enterGmailAccount(String gmailAccount){
+        emailTextBox.clear();
+        emailTextBox.sendKeys(gmailAccount);
         nextButton.click();
-        return new GoogleSignInDenied(driver);
-    }*/
-    public void setEMail(String in){
-        emailTextBox.sendKeys(in);
-    }
-    public void clickForgotEmail(){
-        forgetLink.click();
-    }
-    public void clickMoreOptions(){
-        moreOptions.click();
+
+        return new GmailPasswordPage(driver);
     }
 
-    public String getNextButtonText(){
-        return nextButton.getText();
+    public String getErrorMessage(){
+        return errorMessage.getText();
     }
-
-    public String currentSearch(){
-        return driver.getTitle();
-    }
-
     @Override
     public boolean isLoaded(){
         try{
             WebDriverWait wait = new WebDriverWait(driver, 10);
             wait.until(ExpectedConditions.visibilityOf(googleLogo));
-            logger.info("Google Results page loaded: " + currentSearch());
+            logger.info("Gmail page has been loaded.");
             return true;
         }catch (RuntimeException exception){
-            logger.error("Google Results page was not loaded: " + exception);
+            logger.info("Gmail page has not been loaded.");
             return false;
         }
     }
-
 }
