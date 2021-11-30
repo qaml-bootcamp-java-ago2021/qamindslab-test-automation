@@ -3,7 +3,10 @@ package com.qamindslab.modulefour.srcmain.common;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
     protected WebDriver driver;
@@ -31,5 +34,10 @@ public class BasePage {
         logger.info("Closing " + this.getClass().toString());
         this.driver.close();
         logger.info(this.getClass().toString() + " closed.");
+    }
+    public boolean isEnabled(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(element));
+        return true;
     }
 }

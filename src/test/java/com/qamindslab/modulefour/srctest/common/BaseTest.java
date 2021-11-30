@@ -2,6 +2,7 @@ package com.qamindslab.modulefour.srctest.common;
 
 import com.qamindslab.modulethree.pom.example.googlesignin.srctest.common.exceptions.NotWebDriverImplementedException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -57,7 +58,7 @@ public class BaseTest {
             throw new NotWebDriverImplementedException("The Browser driver you're looking for is not implemented yet: " + browser);
         }
     }
-
+    public boolean isEnabled(WebElement el){ return el.isEnabled();}
     @AfterSuite
     public void tearDown(){
         driver.close();

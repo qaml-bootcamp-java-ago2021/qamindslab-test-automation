@@ -34,15 +34,35 @@ public class GmailLoginTest extends BaseTest {
 
     @Test (dependsOnMethods = "openGoogleGmail")
     public void LogIn(){
+        String propertyFile = "selenium-configurations.properties";
+        String validMail = PropertyReader.getProperty(propertyFile, "email_valid_account");
+        String validPassword = PropertyReader.getProperty(propertyFile, "password_email_valid_account");
+
         String expected = "Redactar";
-        String actual;
-        gmailLogInPage.setUserEmail("banizhermana@gmail.com");
+        String actualRedactar;
+        String principalLabelExpected = "Principal";
+        String promotionLabelActualExpected = "Promociones";
+        String sotialLabelActualExpected = "Social";
+
+        gmailLogInPage.setUserEmail(validMail);
         gmailLogInPage.btnNext();
-        gmailLogInPage.setUserPassword("banizhermana12");
+        gmailLogInPage.setUserPassword(validPassword);
         gmailMainPage = gmailLogInPage.btnSigInGmail();
         assertTrue(gmailMainPage.isLoaded());
-        actual= this.gmailMainPage.redactarButton.getText();
-        assertEquals(actual, expected, "Incorrect string : Redactar");
+
+        actualRedactar= this.gmailMainPage.redactarButton.getText();
+        assertEquals(actualRedactar, expected, "Incorrect string : Redactar");
+
+        String principalLabelActual = gmailMainPage.getPrincipalLabel();
+        String promotionLabelActual = gmailMainPage.getPromotionsLabel();
+        String sotialLabelActual = gmailMainPage.getSocialLabel();
+        assertEquals(principalLabelActual, principalLabelExpected, "Incorrect string : Principal");
+        assertEquals(promotionLabelActual, promotionLabelActualExpected, "Incorrect string : Promociones");
+        assertEquals(sotialLabelActual, sotialLabelActualExpected, "Incorrect string : Social");
+
+        assertTrue(gmailMainPage.isEnabled(gmailMainPage.btnActualizar));
+        assertTrue(gmailMainPage.isEnabled(gmailMainPage.profile));
+
     }
 
 

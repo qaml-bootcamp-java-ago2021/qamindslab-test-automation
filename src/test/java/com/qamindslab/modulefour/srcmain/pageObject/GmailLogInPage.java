@@ -37,6 +37,12 @@ public class GmailLogInPage extends BasePage {
     @FindBy(how = How.LINK_TEXT, using = "Gmail")
     private WebElement gmailLink;
 
+    @FindBy(how = How.CSS, using = "div.OyEIQ.uSvLId > div:nth-child(2) > span")
+    private WebElement messageInvalidPassword;
+
+    @FindBy(how = How.CLASS_NAME, using = "o6cuMc")
+    private WebElement messageEmailNotExist;
+
     public GmailLogInPage(WebDriver driver) {
         super(driver, PropertyReader.getProperty("selenium-configurations.properties", "GMAIL_URL"));
         extentReports.attachReporter(extentSparkReporter);
@@ -58,6 +64,13 @@ public class GmailLogInPage extends BasePage {
     public GmailMainPage btnSigInGmail(){
         nextPasswordButton.click();
         return new GmailMainPage(driver);
+    }
+
+    public String emailNotExist(){
+        return messageEmailNotExist.getText();
+    }
+    public String invalidPasswordMessage(){
+        return messageInvalidPassword.getText();
     }
 
     @Override
