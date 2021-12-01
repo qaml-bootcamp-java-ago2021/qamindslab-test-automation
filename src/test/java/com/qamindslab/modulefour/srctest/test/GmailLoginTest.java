@@ -35,9 +35,9 @@ public class GmailLoginTest extends BaseTest {
     @Test (dependsOnMethods = "openGoogleGmail")
     public void LogIn(){
         String propertyFile = "selenium-configurations.properties";
-        String validMail = PropertyReader.getProperty(propertyFile, "email_valid_account");
-        String validPassword = PropertyReader.getProperty(propertyFile, "password_email_valid_account");
-
+        String validMail = PropertyReader.getProperty(propertyFile, "EMAIL_VALID_ACCOUNT");
+        String validPassword = PropertyReader.getProperty(propertyFile, "PASSWORD_EMAIL_VALID_ACCOUNT");
+        String profileNAme = PropertyReader.getProperty(propertyFile, "PROFILE_NAME");
         String expected = "Redactar";
         String actualRedactar;
         String principalLabelExpected = "Principal";
@@ -62,6 +62,13 @@ public class GmailLoginTest extends BaseTest {
 
         assertTrue(gmailMainPage.isEnabled(gmailMainPage.btnActualizar));
         assertTrue(gmailMainPage.isEnabled(gmailMainPage.profile));
+        gmailMainPage.clickOnProfileButton();
+        String profileNameActual = gmailMainPage.getElement(gmailMainPage.profileName);
+        String profileEmailActual = gmailMainPage.getElement(gmailMainPage.profileEmail);
+        System.out.println("MARENA profileA"+profileNameActual+ " MARE: "+  profileEmailActual);
+        assertEquals(profileNameActual, profileNAme, "the profile doesn't match");
+        assertEquals(profileEmailActual, validMail, "the email doesn't match");
+
 
     }
 

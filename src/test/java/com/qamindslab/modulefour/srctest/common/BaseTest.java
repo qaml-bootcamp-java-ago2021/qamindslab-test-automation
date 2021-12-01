@@ -58,7 +58,6 @@ public class BaseTest {
             throw new NotWebDriverImplementedException("The Browser driver you're looking for is not implemented yet: " + browser);
         }
     }
-    public boolean isEnabled(WebElement el){ return el.isEnabled();}
     @AfterSuite
     public void tearDown(){
         driver.close();

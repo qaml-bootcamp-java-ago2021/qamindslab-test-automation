@@ -39,6 +39,12 @@ public class GmailMainPage extends BasePage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"gb\"]/div[2]/div[3]/div[1]/div[2]/div/a")
     public  WebElement profile;
 
+    @FindBy(how = How.CSS, using = "div[class='gb_bb']>div.gb_lb.gb_mb")
+    public  WebElement profileName;
+
+    @FindBy(how = How.CSS, using = "div[class='gb_bb']>div.gb_nb")
+    public  WebElement profileEmail;
+
 
     public GmailMainPage(WebDriver driver) {
         super(driver, PropertyReader.getProperty("selenium-configurations.properties", "GMAIL_URL"));
@@ -47,7 +53,7 @@ public class GmailMainPage extends BasePage {
     public String getPrincipalLabel(){ return principal.getText(); }
     public String getSocialLabel(){ return social.getText();}
     public String getPromotionsLabel(){ return promotions.getText();}
-
+    public void clickOnProfileButton(){profile.click();}
 
     @Override
     public boolean isLoaded(){

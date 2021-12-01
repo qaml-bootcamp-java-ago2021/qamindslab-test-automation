@@ -40,4 +40,10 @@ public class BasePage {
         wait.until(ExpectedConditions.visibilityOf(element));
         return true;
     }
+
+    public String getElement(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(element));
+        return element.getText();
+    }
 }

@@ -27,7 +27,7 @@ public class GmailValidationError extends BaseTest {
     @Test (dependsOnMethods = "openGoogleGmail")
     public void LogInWithAccountNotExist()  {
         String propertyFile = "selenium-configurations.properties";
-        String noValidMail = PropertyReader.getProperty(propertyFile, "email_invalid_account");
+        String noValidMail = PropertyReader.getProperty(propertyFile, "EMAIL_INVALID_ACCOUNT");
 
         String expected = "No pudimos encontrar tu Cuenta de Google";
         String actual;
@@ -43,8 +43,8 @@ public class GmailValidationError extends BaseTest {
     @Test (dependsOnMethods = "LogInWithAccountNotExist")
     public void LogInWithInvalidPassword() {
         String propertyFile = "selenium-configurations.properties";
-        String emailAccount = PropertyReader.getProperty(propertyFile, "email_valid_account");
-        String noValidPassword = PropertyReader.getProperty(propertyFile, "password_email_invalid_account");
+        String emailAccount = PropertyReader.getProperty(propertyFile, "EMAIL_VALID_ACCOUNT");
+        String noValidPassword = PropertyReader.getProperty(propertyFile, "PASSWORD_EMAIL_INVALID_ACCOUNT");
 
         String expected = "La contraseña es incorrecta. Vuelve a intentarlo o haz clic en \"¿Olvidaste la contraseña?\" para restablecerla.";
         String actual;
