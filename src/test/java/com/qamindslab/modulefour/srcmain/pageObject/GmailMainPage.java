@@ -36,7 +36,7 @@ public class GmailMainPage extends BasePage {
     @FindBy(how = How.CSS, using = "#\\:4 > div > div.nH.aqK > div.Cq.aqL > div > div > div:nth-child(5) > div")
     public  WebElement btnActualizar;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"gb\"]/div[2]/div[3]/div[1]/div[2]/div/a")
+    @FindBy(how = How.XPATH, using = "//*[@id='gb']/div[2]/div[3]/div[1]/div[2]/div/a")
     public  WebElement profile;
 
     @FindBy(how = How.CSS, using = "div[class='gb_bb']>div.gb_lb.gb_mb")
@@ -54,6 +54,9 @@ public class GmailMainPage extends BasePage {
     public String getSocialLabel(){ return social.getText();}
     public String getPromotionsLabel(){ return promotions.getText();}
     public void clickOnProfileButton(){profile.click();}
+    public EmailEditorDialogPage clickOnComposeButton(){redactarButton.click();
+        return new EmailEditorDialogPage(driver);
+    }
 
     @Override
     public boolean isLoaded(){

@@ -42,7 +42,7 @@ public class BasePage {
     }
 
     public String getElement(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 40);
         wait.until(ExpectedConditions.visibilityOf(element));
         return element.getText();
     }
