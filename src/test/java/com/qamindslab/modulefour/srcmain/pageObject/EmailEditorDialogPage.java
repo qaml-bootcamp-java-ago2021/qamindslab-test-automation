@@ -43,10 +43,10 @@ public class EmailEditorDialogPage extends BasePage {
     private WebElement messageTextArea;
 
     @FindBy(how = How.CSS, using = "div[class='dC'] > div[class='T-I J-J5-Ji aoO v7 T-I-atl L3']")
-    private WebElement sendButton;
+    private WebElement sendButton1;
 
     @FindBy(how = How.CSS, using = "div[class='T-I J-J5-Ji aoO v7 T-I-atl L3']")
-    private WebElement sendButton1;
+    private WebElement sendButton;
 
 
 
@@ -73,9 +73,8 @@ public class EmailEditorDialogPage extends BasePage {
         subjectbox.sendKeys(emailSubject);
         messageTextArea.sendKeys(message);
 
-        sendButton1.click();
-
         sendButton.click();
+
     }
 
     @Override

@@ -20,7 +20,7 @@ public class GmailLogInPage extends BasePage {
     ExtentTest extentTest;
 
     @FindBy(how = How.ID, using = "identifierNext")
-    private WebElement nextUserButton;
+    public WebElement nextUserButton;
 
     @FindBy(how = How.CSS, using = "#identifierId")
     private WebElement emailBox;

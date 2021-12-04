@@ -33,17 +33,23 @@ public class GmailMainPage extends BasePage {
     @FindBy(how = How.XPATH, using = "//*[@id=':1y']")
     private WebElement promotions;
 
-    @FindBy(how = How.CSS, using = "#\\:4 > div > div.nH.aqK > div.Cq.aqL > div > div > div:nth-child(5) > div")
+    @FindBy(how = How.CSS, using = "div.T-I.J-J5-Ji.nu")
     public  WebElement btnActualizar;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='gb']/div[2]/div[3]/div[1]/div[2]/div/a")
+    @FindBy(how = How.CSS, using = "a.gb_C.gb_Ma.gb_h>img.gb_Ca.gbii")
     public  WebElement profile;
 
-    @FindBy(how = How.CSS, using = "div[class='gb_bb']>div.gb_lb.gb_mb")
+    @FindBy(how = How.CSS, using = "#gb > div.gb_Fd.gb_Wd.gb_Md > div.gb_0a.gb_E.gb_k.gb_1a.gb_la > div.gb_9a > div.gb_bb > div.gb_lb.gb_mb")
     public  WebElement profileName;
 
     @FindBy(how = How.CSS, using = "div[class='gb_bb']>div.gb_nb")
     public  WebElement profileEmail;
+
+    @FindBy(how = How.CSS, using = "div[class='TN bzz aHS-bnu']")
+    public  WebElement sentButton;
+
+    @FindBy(how = How.CSS, using = "div[class='TN bzz aHS-bnu']")
+    public  WebElement theEmailRowSent;
 
 
     public GmailMainPage(WebDriver driver) {

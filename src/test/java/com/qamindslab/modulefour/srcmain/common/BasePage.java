@@ -46,4 +46,9 @@ public class BasePage {
         wait.until(ExpectedConditions.visibilityOf(element));
         return element.getText();
     }
+    public void clickOnElement(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, 40);
+        wait.until(ExpectedConditions.visibilityOf(element));
+        element.click();
+    }
 }
